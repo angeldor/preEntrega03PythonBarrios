@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if categoria %}
+        <h2>{{ categoria }}</h2>
+
+        {% for blog in blogs %}
+            <article>
+                <h3>{{ blog.titulo }}</h3>
+                <p>{{ blog.contenido }}</p>
+                <p>Escrito por: {{ blog.autor.nombre }} {{ blog.autor.apellido }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <h2>Blog</h2>
+
+        {% for blog in blogs %}
+            <article>
+                <h3>{{ blog.titulo }}</h3>
+                <p>{{ blog.contenido }}</p>
+                <p>Escrito por: {{ blog.autor.nombre }} {{ blog.autor.apellido }}</p>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
